@@ -52,8 +52,8 @@ variable "nodos" {
   }
   
 variable "puerto" {
-  default= "80"
-#   default= "4"
+  default= "8080"
+#   default= "80"
   }  
 
 variable "network_cidrs" {
