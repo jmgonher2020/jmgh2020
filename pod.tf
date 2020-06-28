@@ -27,9 +27,9 @@ resource "kubernetes_deployment" "echo" {
     container {
       image = "hashicorp/http-echo:0.2.1"
       name  = "example2"
-      args = ["-listen=:${var.puerto}", "-text='Hola Mundo JMGH JUNIO-2020 - UNIR"]
+      args = ["-listen=:80", "-text='Hola Mundo JMGH JUNIO-2020 - UNIR"]
       port {
-        container_port = "${var.puerto}"
+        container_port = 80
 }
 }
 }
@@ -51,7 +51,7 @@ resource "kubernetes_service" "echo" {
     }
     port {
       port        = "${var.puerto}"
-      target_port = "${var.puerto}"
+      target_port = 80
     }
     type = "LoadBalancer"
 }
