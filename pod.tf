@@ -50,7 +50,7 @@ resource "kubernetes_service" "echo" {
       App = kubernetes_deployment.echo.spec.0.template.0.metadata[0].labels.App
     }
     port {
-      port        = "${var.puerto}"
+      port        = 8080
       target_port = 80
     }
     type = "LoadBalancer"
