@@ -50,6 +50,11 @@ variable "nodos" {
   default= "2"
 #   default= "4"
   }
+  
+variable "puerto" {
+  default= "80"
+#   default= "4"
+  }  
 
 variable "network_cidrs" {
   type = "map"
