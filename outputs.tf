@@ -2,7 +2,7 @@ output "Servicio_ip" {
   value = "${kubernetes_service.echo.load_balancer_ingress.0.ip}"
 }
 output "Puerto" {
-  value = "${kubernetes_service.echo.spec.0.port.target_port}"
+  value = "${kubernetes_service.echo.spec.0.target_port}"
 }  
 output "Replicas" {
   value = "${kubernetes_deployment.echo.spec.0.replicas}"
