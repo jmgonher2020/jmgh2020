@@ -1,7 +1,7 @@
 resource "oci_containerengine_cluster" "k8s_cluster" {
   #Required
-  #compartment_id     = "${var.compartment_ocid}" 
-  compartment_id     = "ocid1.compartment.oc1..aaaaaaaauow2wnn5drbtbuaak7s2h54ok746k7r4waw3ujfgl4eh2sv73ipa"
+  compartment_id     = "${var.compartment_ocid}" 
+  #compartment_id     = "ocid1.compartment.oc1..aaaaaaaauow2wnn5drbtbuaak7s2h54ok746k7r4waw3ujfgl4eh2sv73ipa"
   kubernetes_version = "${var.oke["version"]}"
   name               = "${var.oke["name"]}"
   vcn_id             = "${oci_core_vcn.oke_vcn.id}"
@@ -15,7 +15,8 @@ resource "oci_containerengine_cluster" "k8s_cluster" {
 resource "oci_containerengine_node_pool" "k8s_node_pool" {
   #Required
   cluster_id         = "${oci_containerengine_cluster.k8s_cluster.id}"
-  compartment_id     = "ocid1.compartment.oc1..aaaaaaaauow2wnn5drbtbuaak7s2h54ok746k7r4waw3ujfgl4eh2sv73ipa"
+  compartment_id = "${var.compartment_ocid}"
+  #compartment_id     = "ocid1.compartment.oc1..aaaaaaaauow2wnn5drbtbuaak7s2h54ok746k7r4waw3ujfgl4eh2sv73ipa"
   kubernetes_version = "${var.oke["version"]}"
   name               = "${var.oke["name"]}"
   node_image_name    = "${var.worker_ol_image_name}"
