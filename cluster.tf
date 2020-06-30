@@ -20,9 +20,6 @@ resource "oci_containerengine_node_pool" "k8s_node_pool" {
   name               = "${var.oke["name"]}"
   node_image_name    = "${var.worker_ol_image_name}"
   node_shape         = "${var.oke["shape"]}"
-##  subnet_ids         = ["${oci_core_subnet.workerSubnetAD1.id}", "${oci_core_subnet.workerSubnetAD2.id}", "${oci_core_subnet.workerSubnetAD3.id}"]
-
-##  quantity_per_subnet = "${var.oke["nodes_per_subnet"]}"
   node_config_details {
     placement_configs {
       availability_domain = "uyHy:US-ASHBURN-AD-1"
@@ -38,7 +35,6 @@ resource "oci_containerengine_node_pool" "k8s_node_pool" {
       }
       size = "${var.nodos}"
     }
-#  ssh_public_key      = "${file(var.ssh_public_key_file)}"
 }
 
 data "oci_containerengine_cluster_kube_config" "cluster_kube_config" {
@@ -49,10 +45,5 @@ data "oci_containerengine_cluster_kube_config" "cluster_kube_config" {
 
 resource "local_file" "kubeconfig" {
   content  = "${data.oci_containerengine_cluster_kube_config.cluster_kube_config.content}"
-##  filename = "${path.module}/kubeconfig"
   filename = "/var/lib/jenkins/.kube/config"
-##  filename = "~/.kube/config"
-##  provisioner "local-exec" {
-##    command = "sleep 60"
-##  }
 }
