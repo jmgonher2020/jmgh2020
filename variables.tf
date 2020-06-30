@@ -41,6 +41,13 @@ variable "oke" {
   }
 }
 
+compartment_id = "${var.compartment_ocid}"
+
+variable "comparment_id" {
+  default= "3"
+#   default= "4"
+  }
+
 variable "replicas" {
   default= "3"
 #   default= "4"
