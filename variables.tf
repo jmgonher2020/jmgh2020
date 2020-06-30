@@ -44,8 +44,7 @@ variable "oke" {
 compartment_id = "${var.compartment_ocid}"
 
 variable "comparment_id" {
-  default= "3"
-#   default= "4"
+  default= "ocid1.compartment.oc1..aaaaaaaauow2wnn5drbtbuaak7s2h54ok746k7r4waw3ujfgl4eh2sv73ipa"
   }
 
 variable "replicas" {
