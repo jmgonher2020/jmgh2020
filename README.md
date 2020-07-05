@@ -2,7 +2,7 @@
 # Proyecto IaC en Oracle OCI a nivel kubernetes. Despliega y/o adecua la infraestructura necesaria en OCI para alojar un microservicio.
 # Jenkinsfile. Ejecucion shell Terraform.
 # cluster.tf.  Definicion de cluster kubernete y nodos.
-# datasources.tf. 
+# datasources.tf. Informacion externa para terraform
 # main.tf. Definicion de provider K8s
 # network.tf.  Definicion de comunicaciones, redes, listas de acceso, rutas, internet, etc.
 # outputs.tf.  Definicion de informacion de salida.
